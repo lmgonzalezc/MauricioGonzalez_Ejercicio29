@@ -23,7 +23,7 @@ int main(){
     Tn[0][0] = 0.0;
     Tn[ns-1][0] = 0.0;
 
-    eta = (dt)/ (C * C * dx);
+    eta = (C * C)/ ((dx/dt)*(dx/dt));
     cout << eta << endl;
 
 
@@ -34,7 +34,7 @@ int main(){
             Tn[i][2] = 2.0 * To[i][1] - To[i][0] + eta * (To[i+1][0]+To[i-1][0]-2.0*To[i][0]);
         }
         for(i=0;i<ns;i++){
-        outfile << Tn[i][0] << " ";
+        outfile << Tn[i][0] << " " << Tn[i][1] << " " << Tn[i][2];
         }
         outfile << "\n";
         for(i=1;i<ns-1;i++){
