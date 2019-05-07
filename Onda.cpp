@@ -31,7 +31,7 @@ int main(){
     while(t < t_max){
         for(i=1;i<ns-1;i++){
             Tn[i][0] = To[i][0] + eta * (To[i+1][0]+To[i-1][0]-2.0*To[i][0]);
-            Tn[i][1] = 2.0 * To[i][1] - To[i][0] + eta * (To[i+1][1]+To[i-1][1]-2.0*To[i][1]);
+            Tn[i][1] = 2.0 * To[i][1] - To[i][0] + eta * (To[i+1][0]+To[i-1][0]-2.0*To[i][0]);
         }
         for(i=0;i<ns;i++){
         outfile << Tn[i][0] << " " << Tn[i][1]; 
